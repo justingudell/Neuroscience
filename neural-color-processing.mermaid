@@ -1,0 +1,25 @@
+graph TD
+    Light[Light Input] --> Retina
+    Retina --> |Cone cells| ON[Cone activation]
+    
+    subgraph "Primary Visual Processing"
+        ON --> OpticNerve
+        OpticNerve --> LGN[Lateral Geniculate Nucleus]
+        LGN --> V1[V1 - Primary Visual Cortex]
+    end
+    
+    subgraph "Higher Order Processing"
+        V1 --> V4[V4 - Color Processing Area]
+        V4 --> IT[Inferior Temporal Cortex]
+        V4 --> PFC[Prefrontal Cortex]
+    end
+    
+    subgraph "Cognitive Integration"
+        IT --> Memory[Memory Association]
+        PFC --> Decision[Decision Making]
+        Memory --> Preference[Color Preference]
+        Decision --> Preference
+    end
+
+    style Light fill:#fff,stroke:#333
+    style Preference fill:#f9f,stroke:#333
